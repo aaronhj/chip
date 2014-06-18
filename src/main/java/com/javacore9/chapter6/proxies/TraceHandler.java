@@ -16,7 +16,20 @@ public class TraceHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method m, Object[] args)
             throws Throwable
     {
-        // print method name and parameters
+        // print implicit argument
+        System.out.print(target);
+        // print method name
+        System.out.print("." + m.getName() + "(");
+        // print explicit arguments
+        if (args != null)
+        {
+            for (int i = 0; i < args.length; i++)
+            {
+                System.out.print(args[i]);
+                if (i < args.length - 1) System.out.print(", ");
+            }
+        }
+        System.out.println(")");
         // invoke actual method
         return m.invoke(target, args);
     }
