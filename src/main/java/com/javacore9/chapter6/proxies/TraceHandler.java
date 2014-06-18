@@ -1,4 +1,4 @@
-package com.javacore9.chapter6;
+package com.javacore9.chapter6.proxies;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
